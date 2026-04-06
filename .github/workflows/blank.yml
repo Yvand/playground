@@ -31,6 +31,11 @@ jobs:
               per_page: 100,
             });
 
+            for (const file of files) {
+              core.info(`Checking file: ${file.filename}`);
+              console.log(`File status: ${file.status}`);
+            }
+
             const zipFiles = files
               .map((file) => file.filename)
               .filter((filename) => {
